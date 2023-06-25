@@ -14,6 +14,7 @@ messageId = 1
 
 while True:
     message = f'Sending messageId: {messageId}'
+    # if exchange is '' it means it is default exchange
     channel.basic_publish(exchange='', routing_key='letterbox', body=message)
 
     print(f'sent message: {message}')
